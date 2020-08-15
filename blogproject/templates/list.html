@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
-{% block header %}{% endblock header %}
+{% block header %}
+    <div class="jumbotron">
+        <h1 class="display-4">ブログ</h1>
+        <p class="lead">記事一覧です</p>
+    </div>
+{% endblock header %}
 
 {% block content %}
     <div class='container'>
@@ -10,10 +15,9 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ item.title}}</h5>
                     <h6 class="card-title">{{ item.postdate}}</h6>
-                    <a href="#" class="btn btn-primary">ボタン</a>
+                    <a href="{% url 'detail' item.pk %}" class="btn btn-primary">詳細</a>
                 </div>
             </div>
         {% endfor %}
-
     </div>
 {% endblock content %}
